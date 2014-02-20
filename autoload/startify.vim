@@ -15,7 +15,8 @@ let s:numfiles         = get(g:, 'startify_files_number', 10)
 let s:show_special     = get(g:, 'startify_enable_special', 1)
 let s:restore_position = get(g:, 'startify_restore_position')
 let s:session_dir      = resolve(expand(get(g:, 'startify_session_dir',
-      \ has('win32') ? '$HOME\vimfiles\session' : '~/.vim/session')))
+      \ get(g:, 'session_directory',
+      \ has('win32') ? '$HOME\vimfiles\session' : '~/.vim/session'))))
 
 if exists('g:startify_list_order')
   let s:lists = g:startify_list_order
